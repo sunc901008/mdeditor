@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'idea'
+    id 'org.springframework.boot' version '1.5.2.RELEASE'
+}
+
+mainClassName = 'focus.editor.Main'
+
+version = '0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+ext {
+    springBootGroup = 'org.springframework.boot'
+    springBootVersion = '1.5.2.RELEASE'
+    mybatisPlusGroup = 'com.baomidou'
+    mybatisPlusVersion = '3.2.0'
+}
+
+dependencies {
+
+    compile "$springBootGroup:spring-boot-starter:$springBootVersion"
+    compile "$springBootGroup:spring-boot-starter-web:$springBootVersion"
+    compile "$springBootGroup:spring-boot-starter-thymeleaf:$springBootVersion"
+
+    compile "$mybatisPlusGroup:mybatis-plus-boot-starter:$mybatisPlusVersion"
+
+    compile group: 'com.h2database', name: 'h2', version: '1.4.199'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
+
+    compile "com.alibaba:fastjson:1.2.35"
+
+    compile "log4j:log4j:1.2.17"
+
+    compile "commons-fileupload:commons-fileupload:1.3.1"
+
+}
